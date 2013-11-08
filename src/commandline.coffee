@@ -224,7 +224,7 @@ class CheckstyleReporter extends Reporter
                     @print """
                     <error line="#{e.lineNumber}"
                             severity="#{@escape(e.level)}"
-                            message="#{@escape(e.message)}; context:#{@escape(e.context)}""
+                            message="#{@escape(e.message)}; context:#{@escape(e.context)}"
                             source="coffeelint"/>
                     """
                 @print "</file>"
