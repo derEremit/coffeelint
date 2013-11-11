@@ -214,7 +214,7 @@ class JSLintReporter extends Reporter
 class CheckstyleReporter extends Reporter
 
     publish : () ->
-        @print "<?xml version=\"1.0\" encoding=\"utf-8\"?><checkstyle version=\"4.3\">"
+        @print "<?xml version=\"1.0\" encoding=\"utf-8\"?><checkstyle version=\"5.0\">"
 
         for path, errors of @errorReport.paths
             if errors.length
@@ -224,8 +224,9 @@ class CheckstyleReporter extends Reporter
                     @print """
                     <error line="#{e.lineNumber}"
                             severity="#{@escape(e.level)}"
-                            message="#{@escape(e.message)}; context:#{@escape(e.context)}"
-                            source="coffeelint"/>
+                            message="#{@escape(e.message)}; context: #{@escape(e.context)}"
+                            source="coffeelint"
+                            descriptiom="#{@escape(e.description)}"/>
                     """
                 @print "</file>"
 
